@@ -21,7 +21,7 @@ try:
         if (hpma115S0.readParticleMeasurement()):
             pm2_5 = (hpma115S0._pm2_5)
             mylcd.lcd_clear()
-            mylcd.lcd_display_string("PM2.5: " + pm2_5,1,0)
+            mylcd.lcd_display_string("PM2.5: " + str(pm2_5),1,0)
             print("PM2.5: %d ug/m3" % (pm2_5))
             print("PM10: %d ug/m3" % (hpma115S0._pm10))
             conn = urllib.request.urlopen('http://rbiot.solveninja.org:3000/update?api_key='+(myAPI)+'&field1='+str(pm2_5))
